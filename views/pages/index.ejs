@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-    body {
-      background: #555;
-    }
-    .content {
-      max-width: 500px;
-      margin: auto;
-      padding: 10px;
-      color: white;
-    }
-    </style>
-  </head>
-  <body>
-    <div class="content">
-      <h2>The ole cake</h2>
-      <img width="640" height="400" src="olecake.jpg">
-    </div>
-  </body>
+
+<head>
+  <%- include('../partials/head') -%>
+</head>
+
+<body>
+
+  <header>
+    <%- include('../partials/header') -%>
+  </header>
+
+  <div class="container container-fluid">
+    <h2>The ole cake</h2>
+    <img class="img-fluid" src="images/olecake.jpg" alt="the ole cake">
+  </div>
+
+  <footer>
+    <%- include('../partials/foother') -%>
+  </footer>
+
+</body>
+
 </html>
