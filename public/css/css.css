@@ -3,3 +3,11 @@ body {
   font-family: 'Ubuntu', sans-serif;
   color: white;
 }
+
+.theimg {
+  transition: opacity 0.3s;
+}
+
+.theimg:hover {
+  opacity: 0.5;
+}

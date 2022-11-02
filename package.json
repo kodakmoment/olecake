@@ -4,6 +4,7 @@
   "description": "the cake is a lie",
   "main": "app.js",
   "scripts": {
+    "nodemon": "nodemon -e js,ejs,css server",
     "start": "node app"
   },
   "author": "",
