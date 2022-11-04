@@ -1,5 +1,5 @@
 # ---- Base Node ----
-FROM arm64v8/alpine:3.14 AS base
+FROM alpine:3.14 AS base
 # install node
 RUN apk add --no-cache nodejs npm tini
 # set working directory
