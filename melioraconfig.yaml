@@ -10,9 +10,14 @@ spec:
       ports:
         - name: http
           port: 3000
-      variables:
-        PORT: 3000
-      runAsNonRoot: true
+      publicPort: http
+      resources:
+        requests:
+          memory: "50M"
+          cpu: "50m"
+        limits:
+          memory: "50M"
+          cpu: "50m"
       environmentConfig:
         - environment: dev
           runAsNonRoot: true
