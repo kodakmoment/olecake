@@ -11,7 +11,9 @@ app.get('/', function (req, res) {
   res.render('pages/index');
 });
 
-// a test
+app.get('/healthz', function (req, res) {
+  res.status(200).send();
+});
 
 app.listen(process.env.PORT || port, () => {
   console.log(`App listening at http://localhost:${port}`)
