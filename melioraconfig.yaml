@@ -1,7 +1,7 @@
-name: olecake
+name: melioracake
 spec:
   environments:
-    - name: test
+    - name: dev
       build:
         from: master
   components:
@@ -19,7 +19,7 @@ spec:
           memory: "50M"
           cpu: "50m"
       environmentConfig:
-        - environment: test
+        - environment: dev
           runAsNonRoot: true
           resources:
             requests:
@@ -33,5 +33,5 @@ spec:
             minReplicas: 2
             maxReplicas: 5
   dnsAppAlias:
-    environment: test
+    environment: dev
     component: server
