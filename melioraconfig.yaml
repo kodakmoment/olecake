@@ -1,4 +1,4 @@
-name: olecake
+name: melioracake
 spec:
   environments:
     - name: dev
