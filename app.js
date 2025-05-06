@@ -1,17 +1,19 @@
-let express = require('express');
-let app = express();
-let morgan = require('morgan');
-let port = 3000;
+const express = require('express');
+const morgan = require('morgan');
+
+const app = express();
+const port = 3000;
 
 app.set('view engine', 'ejs');
+
 app.use(express.static("public"));
 app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
-  res.render('pages/index');
+  res.render('index');
 });
 
-app.get('/healthz', function (req, res) {
+app.get('/health', function (req, res) {
   res.status(200).send();
 });
 
