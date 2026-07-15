@@ -1,20 +1,9 @@
-# ---- Base ----
-FROM alpine:latest AS base
-RUN apk add --no-cache nodejs npm tini
-WORKDIR /app
-ENTRYPOINT ["/sbin/tini", "--"]
-COPY package.json .
+FROM nginx:alpine
 
-# ---- Dependencies ----
-FROM base AS dependencies
-RUN npm set progress=false && npm config set depth 0
-RUN npm install --only=production 
-RUN cp -R node_modules prod_node_modules
-RUN npm install
+# Remove default nginx config and site
+RUN rm /etc/nginx/conf.d/default.conf
 
-# ---- Release ----
-FROM base AS release
-COPY --from=dependencies /app/prod_node_modules ./node_modules
-COPY . .
+COPY nginx.conf /etc/nginx/conf.d/app.conf
+COPY public/ /usr/share/nginx/html/
+
 EXPOSE 3000
-CMD npm run start
